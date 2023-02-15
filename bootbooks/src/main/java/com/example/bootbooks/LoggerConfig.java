@@ -1,5 +1,7 @@
 package com.example.bootbooks;
 
+import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InjectionPoint;
@@ -16,5 +18,10 @@ public class LoggerConfig {
 		String className = ip.getMethodParameter().getContainingClass().getCanonicalName();
 		return LoggerFactory.getLogger(className);
 
+	}
+	
+	@Bean
+	public Book getBook() {
+		return new Book(234, "That's Krazy! - Spring Boot", BigDecimal.valueOf(1000, 2));
 	}
 }

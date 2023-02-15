@@ -3,10 +3,16 @@ package com.example.bootbooks;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
 public class Book {
+
+	@Id    
 	private long id;
 	private String title;
 	private BigDecimal price;

@@ -23,7 +23,7 @@ public class BootbooksApplication implements ApplicationRunner {
 	
 	private static Logger logger = LoggerFactory.getLogger(BootbooksApplication.class);
 	
-	public BootbooksApplication(BookLister bookLister) {
+	public BootbooksApplication(@Qualifier("JDBC_REPOSITORY") BookLister bookLister) {
 		super();
 		this.bookLister = bookLister;
 	}
@@ -37,6 +37,7 @@ public class BootbooksApplication implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
 		bookLister.listAllBooksToLogger();		
 	}
 	
